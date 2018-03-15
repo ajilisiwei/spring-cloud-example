@@ -7,6 +7,8 @@ import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Random;
+
 @RestController
 public class HelloWorldController {
     private final Logger logger = Logger.getLogger(getClass());
@@ -34,5 +36,15 @@ public class HelloWorldController {
     @RequestMapping(value = "/hello3", method = RequestMethod.POST)
     public String hello(@RequestBody User user) {
         return "Hello," + user.getName() + ", " + user.getAge();
+    }
+
+    @RequestMapping(value = "/hello4",method = RequestMethod.GET)
+    public String hello() throws InterruptedException {
+        ServiceInstance instance=client.getLocalServiceInstance();
+        int sleepTime=new Random().nextInt(3000);
+        logger.info("sleepTime:"+sleepTime);
+        Thread.sleep(sleepTime);
+        logger.info("/hello4,host:"+instance.getHost()+", service_id:"+instance.getServiceId());
+        return "hello world";
     }
 }

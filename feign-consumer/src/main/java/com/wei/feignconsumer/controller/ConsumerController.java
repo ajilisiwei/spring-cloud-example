@@ -37,4 +37,9 @@ public class ConsumerController {
         sb.append(refactorHelloService.hello(new com.wei.dto.User("Jhon",22))).append("\r\n");
         return sb.toString();
     }
+
+    @RequestMapping(value = "feign-consumer4",method = RequestMethod.GET)
+    public String helloConstumer4(){
+        return helloService.hello1();
+    }
 }
