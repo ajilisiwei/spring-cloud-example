@@ -16,6 +16,7 @@
         <module>turbine</module>
         <module>feign-consumer</module>
         <module>server-provider-api</module>
+        <module>api-gateway</module>
     </modules>
     <dependencies>
         <dependency>
