@@ -17,6 +17,7 @@
         <module>feign-consumer</module>
         <module>server-provider-api</module>
         <module>api-gateway</module>
+        <module>api-gateway2</module>
     </modules>
     <dependencies>
         <dependency>
