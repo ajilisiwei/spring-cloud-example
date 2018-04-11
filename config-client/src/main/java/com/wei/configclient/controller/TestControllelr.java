@@ -1,4 +1,4 @@
-package com.wei.controller;
+package com.wei.configclient.controller;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;

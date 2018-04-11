@@ -30,3 +30,5 @@
 5.测试
   启动项目,进行测试:http://localhost:7001/configserver/prod/config-label-test
   测试结果见configserver1;由configserver2中的打印信息可以看出,spring-cloud-config还会在本地暂存一个配置仓库
+6.增加安全保护
+    spring-boot-starter-security
