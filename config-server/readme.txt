@@ -32,3 +32,5 @@
   测试结果见configserver1;由configserver2中的打印信息可以看出,spring-cloud-config还会在本地暂存一个配置仓库
 6.增加安全保护
     spring-boot-starter-security
+7.服务化配置中心;引入eureka,将config-server注册为服务
+8.另外还可以实现配置中心的加密解密和高可用配置
