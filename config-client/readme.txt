@@ -22,3 +22,11 @@
 5.动态刷新配置
     (1).引入spring-boot-starter-actuator依赖
     (2).修改git仓库配置文件,以POST方式请求http://localhost:7002/refresh进行刷新,并重新请求配置信息
+6.引入spring-cloud-bus使用RabbitMQ消息代理来实现高可用配置中心多个实例配置信息动态刷新
+    (0).安装好RabbitMQ服务并启动
+    (1).添加spring-cloud-bus-amqp
+    (2).增加RabbitMQ服务器配置信息(见配置文件)
+    (3).启动不同客户端实例，通过POST请求向其中一个实例发送/bus/refresh请求，查看其它实例配置信息是
+        否变化;另外,优化方案可以改用将config-server也加入bus中,通过向config-server
+        (比如/bus/refresh?destination=指定的服务或实例)发送刷新配置的post请求来实现配置刷新(也可以通
+        过Git仓库的Web Hook来自动触发)
