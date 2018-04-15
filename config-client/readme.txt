@@ -30,3 +30,6 @@
         否变化;另外,优化方案可以改用将config-server也加入bus中,通过向config-server
         (比如/bus/refresh?destination=指定的服务或实例)发送刷新配置的post请求来实现配置刷新(也可以通
         过Git仓库的Web Hook来自动触发)
+7.在config-server和config-client工程引入spring-cloud-starter-bus-kafka模块实现kafka消息代理机制,
+    将spring-cloud-starter-bus-amqp换成spring-cloud-starter-bus-kafka;均采用默认配置实现。确认
+    本地的kafka和zookeeper服务已安装并可正常使用,启动完成可看到springCloudBus的Topic
